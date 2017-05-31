@@ -185,7 +185,7 @@ class AgentsController extends Controller {
 					});
 					$receiver = $data['phone'];
 					$cyclo_type = 'TARIF AGENCE';
-					$body = "Bravo ta réservation est validée! Ton cyclo ".$cyclo_type." sera à ta disposition le " . $start_datetime_fr . " jusqu'à 13h. Bonne journée! Code: " .$data['uni_code'];
+					$body = "Bravo ta réservation  du " . $start_datetime_fr . " est validée!  Les conditions d'annulation et de remboursement dépendent de l'offre choisie. Ton cyclo ".$cyclo_type." sera à ta disposition le " . $start_datetime_fr . " jusqu'à 12h30. Bonne journée! Code: " .$data['uni_code'];
 					\App\Sms::sendSms($receiver, $body);
 					return redirect('/agents')->withMessage('Reservé avec succès!');
 				}else return redirect()->back()->withError('On a rencontré une erreur!')->withInput();
